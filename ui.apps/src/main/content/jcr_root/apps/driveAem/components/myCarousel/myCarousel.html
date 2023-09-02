@@ -1,0 +1,47 @@
+<sly data-sly-use.details="com.myaem.core.models.MyCarousel">
+
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+
+        <div class="carousel-inner" data-sly-list.fir="${details.items}">
+            <div class="item ${firList.count == 1 ? 'active':''}">
+                <img src="${fir.image}" alt="AEM 1" style="width:100%;height: 325px;">
+                <div class="carousel-caption">
+                    <a href="${fir.linkTo}"><h3>${fir.text}</h3></a>
+                    <p>Read more about this</p>
+                </div>
+            </div>
+          </div>
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script>
+      Holder.addTheme('thumb', {
+        bg: '#55595c',
+        fg: '#eceeef',
+        text: 'Thumbnail'
+      });
+</script>
+ </sly>
+    <sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html">
+        <sly data-sly-call="${clientlib.css @ categories='driveAem.new'}"/>
+        <sly data-sly-call="${clientlib.js @ categories='driveAem.new'}"/>
+    </sly>
+    <sly data-sly-resource="${'contexthub' @ resourceType='granite/contexthub/components/contexthub'}"/>
+
+

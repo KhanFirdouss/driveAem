@@ -1,0 +1,24 @@
+<sly data-sly-use.details="com.myaem.core.models.MyFooter">
+    <div class="container">
+<p class="align-center">
+    <a href="${details.back}">Back to top</a>
+</p>
+<footer class="blog-footer">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 ">
+            <div class="footer__block">
+                <a target="" href="${details.home}" aria-label="PwC office locations">HomePage</a>
+                <a target="" href="${details.blog}" aria-label="PwC office locations">Blogs</a>
+            </div>
+        </div>
+    </div>
+    <p>© 2022  - 2023 TTN Bootcamp. All rights reserved.</p>
+</footer>
+    </div>
+</sly>
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html">
+    <sly data-sly-call="${clientlib.css @ categories='driveAem.new'}"/>
+    <sly data-sly-call="${clientlib.js @ categories='driveAem.new'}"/>
+</sly>
+<sly data-sly-resource="${'contexthub' @ resourceType='granite/contexthub/components/contexthub'}"/>
+

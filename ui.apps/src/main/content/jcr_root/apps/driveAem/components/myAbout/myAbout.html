@@ -1,0 +1,21 @@
+<sly data-sly-use.details="com.myaem.core.models.MyAbout">
+    <div class="container">
+        <main role="main" class="container">
+            <div class="row">
+                <aside class="col-md-4 blog-sidebar">
+                    <div class="p-3 mb-3 bg-light rounded">
+                        <h4 class="font-italic">${details.heading}</h4>
+                        <p class="mb-0">${details.description}</p>
+                        <p class="mb-0">Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+                    </div>
+                </aside>
+            </div>
+        </main>
+    </div>
+
+</sly>
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html">
+    <sly data-sly-call="${clientlib.css @ categories='driveAem.new'}"/>
+    <sly data-sly-call="${clientlib.js @ categories='driveAem.new'}"/>
+</sly>
+<sly data-sly-resource="${'contexthub' @ resourceType='granite/contexthub/components/contexthub'}"/>

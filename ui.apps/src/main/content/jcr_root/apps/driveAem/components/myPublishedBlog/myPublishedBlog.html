@@ -1,0 +1,25 @@
+<sly data-sly-use.details="com.myaem.core.models.MyPublishedBlog">
+    <ul data-sly-list.fir="${details.items}">
+        <div class="container">
+    <div class="row">
+        <div class="card flex-md-row mb-4 shadow-sm h-md-1200">
+            <div class="card-body d-flex flex-column align-items-start">
+                <strong class="d-inline-block mb-2 text-primary">${fir.heading}</strong>
+                <h3 class="mb-0">
+                    <a class="text-dark" href="${details.more}">${fir.title}</a>
+                </h3>
+                <div class="mb-1 text-muted">${fir.text}</div>
+                <p class="card-text mb-auto">${fir.description}</p>
+                <a href="${fir.more}">Continue reading</a>
+            </div>
+            <img class="card-img-right flex-auto d-none d-lg-block" alt="Thumbnail [200x250]" style="width: 200px; height: 250px;" src="${fir.image}" data-holder-rendered="true">
+
+        </div>
+    </div>
+        </div>
+</ul>
+</sly>
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html">
+    <sly data-sly-call="${clientlib.css @ categories='driveAem.new'}"/>
+</sly>
+<sly data-sly-resource="${'contexthub' @ resourceType='granite/contexthub/components/contexthub'}"/>

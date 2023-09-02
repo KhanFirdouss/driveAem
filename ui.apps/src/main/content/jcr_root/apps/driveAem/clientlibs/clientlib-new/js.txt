@@ -1,0 +1,6 @@
+
+#base=js
+bootstrap.min.js
+docs.min.js
+popper.min.js
+holder.min.js

@@ -1,0 +1,27 @@
+<sly data-sly-use.details="com.myaem.core.models.MyHeader">
+    <div class="container">
+        <header class="blog-header py-3">
+            <div class="row flex-nowrap justify-content-between align-items-center">
+                <div class="col-12 text-center">
+                    <a class="blog-header-logo text-dark" href="${details.home}">
+                        <img src="${details.fileReference}" class="ttn-logo">${details.mainHeading}</a>
+                </div>
+            </div>
+        </header>
+
+        <div class="nav-scroller py-1 mb-2">
+            <nav class="nav d-flex">
+                <a class="p-2 text-muted" href="${details.home}">Home</a>
+                <a class="p-2 text-muted" href="${details.published}">Published Blogs</a>
+            </nav>
+        </div>
+    </div>
+</sly>
+
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html">
+        <sly data-sly-call="${clientlib.css @ categories='driveAem.new'}"/>
+        <sly data-sly-call="${clientlib.js @ categories='driveAem.new'}"/>
+    </sly>
+    <sly data-sly-resource="${'contexthub' @ resourceType='granite/contexthub/components/contexthub'}"/>
+
+
